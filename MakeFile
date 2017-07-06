@@ -1,0 +1,8 @@
+All: Node.o LinkedList.o
+  g++ Node.o LinkedList.o -o All
+
+Node.o : Node.c Node.h
+  g++ Node.c Node.h -o Node.o
+
+LinkedList.o : LinkedList.c LinkedList.h
+  g++ LinkedList.c LinkedList.h -o LinkedList.o
