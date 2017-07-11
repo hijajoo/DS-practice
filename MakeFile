@@ -1,5 +1,5 @@
-All: Node.o LinkedList.o
-  g++ Node.o LinkedList.o -o All
+All: Node.o LinkedList.o ds-main.cpp
+  g++ Node.o LinkedList.o ds-main.cpp -o All
 
 Node.o : Node.c Node.h
   g++ Node.c Node.h -o Node.o
