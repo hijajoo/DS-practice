@@ -1,25 +1,26 @@
 #include "Node.h"
 
-Node::Node(int x=0){
+Node::Node(int x){
   val = x;
   next = NULL;
 }
 
-Node::Node *getNext(){
+Node *Node::getNext(){
   return next;
 }
 
-Node::setNext(Node *x){
+void Node::setNext(Node *x){
   next = x;
 }
+
 int Node::getVal(){
   return val;
 }
 
-Node::setVal(int x){
+void Node::setVal(int x){
   val = x;
 }
 
-friend ostream Node::operator<< (ostream out){
+ostream &operator << (ostream out, Node x){
   return out << x.getVal();
 }

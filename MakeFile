@@ -1,8 +1,11 @@
-All: Node.o LinkedList.o ds-main.cpp
-  g++ Node.o LinkedList.o ds-main.cpp -o All
+final : Node.o LinkedList.o ds-main.cpp
+	g++ -g Node.o LinkedList.o ds-main.cpp -o final
 
-Node.o : Node.c Node.h
-  g++ Node.c Node.h -o Node.o
+Node.o : Node.cpp Node.h
+	g++ -g -c Node.cpp -o Node.o
 
-LinkedList.o : LinkedList.c LinkedList.h
-  g++ LinkedList.c LinkedList.h -o LinkedList.o
+LinkedList.o : LinkedList.cpp LinkedList.h
+	g++ -g -c LinkedList.cpp -o LinkedList.o
+
+clean: 
+	rm -rf *.o final

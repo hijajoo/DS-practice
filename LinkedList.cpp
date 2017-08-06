@@ -6,25 +6,27 @@ LinkedList::LinkedList(){
   tail = NULL;
 }
 
-LinkedList::insertTail(int val){
+void LinkedList::insertTail(int val){
   Node temp(val);
   if(tail == NULL){
     head = tail = &temp;
   } else {
     tail->setNext(&temp);
-    tail = tail.getNext();
+    tail = tail->getNext();
+  }
 }
 
-LinkedList::insertHead(int val){
+void LinkedList::insertHead(int val){
   Node temp(val);
   if(head == NULL){
     head = tail = &temp;
   } else {
     temp.setNext(head);
     head = &temp;
+  }
 }
 
-LinkedList::findDelete(int val){
+void LinkedList::findDelete(int val){
   Node *prev = head;
   if(prev == NULL){
     return;
@@ -38,8 +40,8 @@ LinkedList::findDelete(int val){
   }
 }
 
-friend ostream Linkedlist::operator& (ostream out){
-  Node *curr = head;
+ostream& operator <<(ostream& out, LinkedList l){
+  Node *curr = l.head;
   while(curr != NULL){
     out << curr << "\t";
     curr = curr->getNext();
