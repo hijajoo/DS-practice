@@ -16,6 +16,7 @@ class LinkedList{
   void insertHead(int val);
   void findDelete(int val);
   friend ostream& operator <<(ostream& out, LinkedList l);
+  void reverseIterative();
 };
 
 #endif

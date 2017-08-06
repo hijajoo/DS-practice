@@ -48,3 +48,17 @@ ostream& operator <<(ostream& out, LinkedList l){
   }
   return out;
 }
+
+void LinkedList::reverseIterative(){
+  if(head == NULL)
+    return;
+  Node *curr = head;
+  Node *prev = NULL;
+  Node *next = curr->getNext();
+  while(curr != NULL){
+    curr->setNext(prev);
+    prev = curr;
+    curr = next;
+    next = curr->getNext();
+  }
+}
